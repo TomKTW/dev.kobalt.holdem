@@ -18,8 +18,8 @@
 
 package dev.kobalt.holdem.jvm.server
 
-import dev.kobalt.holdem.jvm.extension.randomUid
 import dev.kobalt.holdem.jvm.extension.syncedHashSet
+import dev.kobalt.holdem.jvm.uid.Uid
 
 
 class HoldemServer {
@@ -33,14 +33,14 @@ class HoldemServer {
 
     fun generateClientUid(): String {
         var attempt = 0
-        do String.randomUid()
+        do Uid.random().toString()
             .let { uid -> if (clients.any { it.uid == uid }) attempt += 1 else return uid } while (attempt < attemptLimit)
         throw Exception()
     }
 
     fun generateRoomUid(): String {
         var attempt = 0
-        do String.randomUid().let { uid ->
+        do Uid.random().toString().let { uid ->
             if (rooms.any { it.uid == uid }) attempt += 1 else return uid
         } while (attempt < attemptLimit)
         throw Exception()
