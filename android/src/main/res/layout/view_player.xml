@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dev.kobalt.holdem.android.view.FrameView xmlns:android="http://schemas.android.com/apk/res/android"
+                                          xmlns:app="http://schemas.android.com/apk/res-auto"
+                                          xmlns:tools="http://schemas.android.com/tools"
+                                          android:layout_width="96dp"
+                                          android:layout_height="96dp"
+                                          android:gravity="center"
+                                          android:orientation="vertical"
+                                          android:padding="4dp">
+
+    <dev.kobalt.holdem.android.view.ImageView
+            android:id="@+id/playerImage"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="top|center"
+            app:srcCompat="@drawable/ic_baseline_person_24"
+            app:tint="@color/white"/>
+
+    <dev.kobalt.holdem.android.view.ImageView
+            android:id="@+id/dealerTagImage"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="end|top"
+            android:layout_margin="2dp"
+            app:srcCompat="@drawable/ic_baseline_circle_24"
+            app:tint="@color/white"/>
+
+    <dev.kobalt.holdem.android.view.StackView
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_gravity="top|center"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal">
+
+        <com.caverock.androidsvg.SVGImageView
+                android:id="@+id/firstCardImage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        <dev.kobalt.holdem.android.view.SpaceView
+                android:layout_width="2dp"
+                android:layout_height="match_parent"/>
+
+        <com.caverock.androidsvg.SVGImageView
+                android:id="@+id/secondCardImage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+    </dev.kobalt.holdem.android.view.StackView>
+
+    <dev.kobalt.holdem.android.view.StackView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+        <dev.kobalt.holdem.android.view.LabelView
+                android:id="@+id/nameLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                tools:text="Player Name"/>
+
+        <dev.kobalt.holdem.android.view.LabelView
+                android:id="@+id/valueLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                tools:text="0"/>
+
+        <dev.kobalt.holdem.android.view.LabelView
+                android:id="@+id/actionLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                tools:text="Action - 300"/>
+
+    </dev.kobalt.holdem.android.view.StackView>
+
+
+</dev.kobalt.holdem.android.view.FrameView>

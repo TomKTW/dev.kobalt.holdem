@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dev.kobalt.holdem.android.view.StackView xmlns:android="http://schemas.android.com/apk/res/android"
+                                          xmlns:app="http://schemas.android.com/apk/res-auto"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:background="@color/green_800"
+                                          android:gravity="center"
+                                          android:orientation="vertical">
+
+    <dev.kobalt.holdem.android.view.StackView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_a50"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <dev.kobalt.holdem.android.view.ImageButtonView
+                android:id="@+id/cancelButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:padding="16dp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/ic_baseline_close_24"/>
+
+        <dev.kobalt.holdem.android.view.LabelView
+                android:id="@+id/headerTitleLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="start"
+                android:text="@string/play_leave_title"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+        <dev.kobalt.holdem.android.view.ImageButtonView
+                android:id="@+id/confirmButton"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:padding="16dp"
+                android:tint="@color/white"
+                app:srcCompat="@drawable/ic_baseline_check_24"/>
+
+    </dev.kobalt.holdem.android.view.StackView>
+
+    <dev.kobalt.holdem.android.view.LabelView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="@string/play_leave_message"
+            android:textColor="@color/white"/>
+
+</dev.kobalt.holdem.android.view.StackView>

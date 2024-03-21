@@ -1,13 +1,13 @@
 plugins {
-    kotlin("jvm") version "1.9.22"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    kotlin("jvm")
+    id("com.github.johnrengelman.shadow")
 }
 
 group = "dev.kobalt"
 version = "0000.00.00.00.00.00.000"
 
 repositories {
-    mavenCentral()
+//    mavenCentral()
 }
 
 fun ktor(module: String, version: String) = "io.ktor:ktor-$module:$version"

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dev.kobalt.holdem.android.view.StackView xmlns:android="http://schemas.android.com/apk/res/android"
+                                          xmlns:app="http://schemas.android.com/apk/res-auto"
+                                          android:layout_width="match_parent"
+                                          android:layout_height="match_parent"
+                                          android:orientation="vertical">
+
+    <dev.kobalt.holdem.android.view.CircularView
+            android:id="@+id/tableCircle"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            app:cl_angleOffset="90"
+            app:cl_centerView="@id/cardStack">
+
+        <dev.kobalt.holdem.android.view.StackView
+                android:id="@+id/cardStack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <dev.kobalt.holdem.android.view.StackView
+                    android:id="@+id/cardTopStack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"/>
+
+            <dev.kobalt.holdem.android.view.SpaceView
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"/>
+
+            <dev.kobalt.holdem.android.view.StackView
+                    android:id="@+id/cardBottomStack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"/>
+        </dev.kobalt.holdem.android.view.StackView>
+
+    </dev.kobalt.holdem.android.view.CircularView>
+
+    <dev.kobalt.holdem.android.view.StackView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/betSlider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:thumbTint="@color/black"/>
+
+        <dev.kobalt.holdem.android.view.LabelView
+                android:id="@+id/betLabel"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:textColor="@color/white"/>
+
+    </dev.kobalt.holdem.android.view.StackView>
+
+    <dev.kobalt.holdem.android.view.StackView
+            android:id="@+id/tableActionStack"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:elevation="8dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+        <dev.kobalt.holdem.android.view.LabelButtonView
+                android:id="@+id/foldButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/black_a50"
+                android:gravity="center"
+                android:text="@string/play_table_fold_action"
+                android:textColor="@color/white"/>
+
+        <dev.kobalt.holdem.android.view.LabelButtonView
+                android:id="@+id/checkButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/black_a50"
+                android:gravity="center"
+                android:text="@string/play_table_check_action"
+                android:textColor="@color/white"/>
+
+        <dev.kobalt.holdem.android.view.LabelButtonView
+                android:id="@+id/callButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/black_a50"
+                android:gravity="center"
+                android:text="@string/play_table_call_action"
+                android:textColor="@color/white"/>
+
+        <dev.kobalt.holdem.android.view.LabelButtonView
+                android:id="@+id/betButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/black_a50"
+                android:gravity="center"
+                android:text="@string/play_table_bet_action"
+                android:textColor="@color/white"/>
+
+        <dev.kobalt.holdem.android.view.LabelButtonView
+                android:id="@+id/raiseButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/black_a50"
+                android:gravity="center"
+                android:text="@string/play_table_raise_action"
+                android:textColor="@color/white"/>
+
+        <dev.kobalt.holdem.android.view.LabelButtonView
+                android:id="@+id/allinButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/black_a50"
+                android:gravity="center"
+                android:text="@string/play_table_allin_action"
+                android:textColor="@color/white"/>
+
+        <dev.kobalt.holdem.android.view.LabelButtonView
+                android:id="@+id/startButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@color/black_a50"
+                android:gravity="center"
+                android:text="@string/play_table_start_action"
+                android:textColor="@color/white"/>
+
+    </dev.kobalt.holdem.android.view.StackView>
+
+</dev.kobalt.holdem.android.view.StackView>
