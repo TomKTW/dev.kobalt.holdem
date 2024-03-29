@@ -6,10 +6,6 @@ plugins {
 group = "dev.kobalt"
 version = "0000.00.00.00.00.00.000"
 
-repositories {
-//    mavenCentral()
-}
-
 fun ktor(module: String, version: String) = "io.ktor:ktor-$module:$version"
 fun exposed(module: String, version: String) = "org.jetbrains.exposed:exposed-$module:$version"
 fun general(module: String, version: String) = "$module:$version"
@@ -46,7 +42,7 @@ dependencies {
 
 tasks {
     named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
-        archiveFileName.set("holdem.jar")
+        archiveFileName.set("holdem.jvm.jar")
         mergeServiceFiles()
         manifest {
             attributes("Main-Class" to "dev.kobalt.holdem.jvm.MainKt")

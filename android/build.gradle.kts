@@ -10,10 +10,11 @@ android {
 
     defaultConfig {
         applicationId = "dev.kobalt.holdem.android"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -21,25 +22,20 @@ android {
         debug {
             isDebuggable = true
             isMinifyEnabled = false
-            // shrinkResources = false
+            isShrinkResources = false
             resValue("string", "app_version", "2022.05.01")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         release {
             isDebuggable = false
-            isMinifyEnabled = false
-            // shrinkResources true
+            isMinifyEnabled = true
+            isShrinkResources = true
             resValue("string", "app_version", "2022.05.01")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    /*buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }*/
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
@@ -52,6 +48,8 @@ android {
 }
 
 dependencies {
+    // Android JDK Desugaring
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
     // Android SVG Support
     implementation("com.caverock:androidsvg-aar:1.4")
     // AndroidX AppCompat
@@ -92,8 +90,6 @@ dependencies {
     implementation("com.github.Zhuinden:simple-stack:2.6.2")
     // Simple Stack Navigation Extensions
     implementation("com.github.Zhuinden:simple-stack-extensions:2.2.2")
-    // Desugar JDK libraries
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
     // JUnit
     testImplementation("junit:junit:4.13.2")
     // AndroidX JUnit
